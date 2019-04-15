@@ -171,7 +171,7 @@ Now we can define our pipeline:
 
 ```php
 $schema = (new Schema\Compiler())->compile(new Schema\Registry($dbal), [
-    new Annotated\Entities($cl),              // register annotated entities
+    new Annotated\Entities($classLocator),    // register annotated entities
     new Schema\Generator\ResetTables(),       // re-declared table schemas (remove columns)
     new Schema\Generator\GenerateRelations(), // generate entity relations
     new Schema\Generator\ValidateEntities(),  // make sure all entity schemas are correct
